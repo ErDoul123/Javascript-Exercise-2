@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+    <style>
+      .color-option 
+	  {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 3px solid black;
+      }
+	  
+      #colorHistory 
+	  {
+        margin-top: 20px;
+        margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+	<h1>Exercise 2</h1>
+  
+    <p>Click on a color:</p>
+	
+    <div id="colors">
+      <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+	  <div class="color-option" style="background-color: green;" onclick="selectColor('green')"></div>
+	  <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+      <div class="color-option" style="background-color: cyan;" onclick="selectColor('cyan')"></div>
+	  <div class="color-option" style="background-color: purple;" onclick="selectColor('purple')"></div>
+      <div class="color-option" style="background-color: black;" onclick="selectColor('black')"></div>     
+    </div>
+	
+    <div id="message" style="margin-top: 20px;"></div>
+	
+    <div id="colorHistory">
+	
+      <p>Color History:</p>
+      <ul id="history-list"></ul>
+    </div>
+
+    <script>
+	
+      function selectColor(color) 
+	  {
+        const displayedMessage = document.getElementById("message");
+        displayedMessage.innerHTML = "Hello world!";
+        displayedMessage.style.color = color;
+
+        const historyList = document.getElementById("history-list");
+        const historyItem = document.createElement("li");
+        historyItem.innerHTML = color;
+        historyList.appendChild(historyItem);
+      }
+    </script>
+  </body>
+</html>
